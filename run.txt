@@ -2,9 +2,10 @@ adb tcpip 5555
 
 docker build -t flutter_dev .
 
-docker run -it --name flutter_dev -v ${PWD}:/home/developer/repo -v "C:/Users/atqamz/.android:/home/developer/.android" -p 5555:5555 -p 8080:8080 flutter_dev
+docker run -it --name flutter_dev -v ${PWD}:/home/developer/repo -v "${HOME}/.android:/home/developer/.android" flutter_dev
 
 adb connect host.docker.internal:5555
 
 flutter run -d host.docker.internal:5555
-flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8080
+# or
+flutter run
