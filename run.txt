@@ -1,0 +1,3 @@
+docker run -it --name flutter_dev -v ${PWD}:/home/developer/repo -p 8080:8080 flutter_dev
+
+flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8080
